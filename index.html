@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libitum — Згода на cookies</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,900&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ═══════════ LIBITUM DESIGN SYSTEM ═══════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --teal-400:#2DD4BF;--teal-500:#14B8A6;--teal-600:#0D9488;--teal-700:#0F766E;
+  --teal-50:#F0FDFA;--teal-100:#CCFBF1;
+  --amber:#F59E0B;--violet:#8B5CF6;--violet-50:#F5F3FF;--violet-100:#DDD6FE;
+  --bg:#F8FAFB;--ink:#0F172A;--ink-2:#1E293B;
+  --muted:#64748B;--muted-2:#94A3B8;--border:#E2E8F0;
+  --red:#DC2626;--green:#16A34A;--green-50:#F0FDF4;
+  --r:14px;--r-lg:20px;--r-xl:26px;
+  --sh-sm:0 1px 3px rgba(15,23,42,.06);--sh:0 4px 16px rgba(15,23,42,.08);
+  --sh-lg:0 10px 40px rgba(15,23,42,.10);--sh-xl:0 20px 60px rgba(15,23,42,.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ── HEADER (контекст) ── */
+.head{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.head-in{display:flex;align-items:center;gap:22px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo-ic{width:36px;height:36px;background:linear-gradient(175deg,var(--teal-600),var(--teal-700));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces',serif;font-weight:900;font-size:18px}
+.logo-tx{font-family:'Fraunces',serif;font-weight:900;font-size:21px;letter-spacing:-.4px}
+.nav{display:flex;gap:22px;margin-left:8px}
+.nav a{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--teal-700)}
+.head-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.head-ic{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:#fff;color:var(--muted);display:flex;align-items:center;justify-content:center}
+@media(max-width:760px){.nav{display:none}}
+
+/* ── HERO / DEMO ── */
+.hero{padding:48px 0 26px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,4.4vw,44px);font-weight:900;letter-spacing:-.6px;margin-bottom:12px}
+.hero p{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:26px 0 52px}
+.tcard{background:#fff;border:1.5px solid var(--border);border-radius:var(--r-xl);padding:16px;box-shadow:var(--sh-sm)}
+.tcard .av{width:100%;aspect-ratio:1.2;border-radius:var(--r-lg);background:linear-gradient(135deg,var(--teal-50),#EEF2F5);margin-bottom:12px;display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:24px}
+.tcard h3{font-size:14.5px;font-weight:800;margin-bottom:3px}
+.tcard .m{font-size:12px;color:var(--muted)}
+.tcard .pr{font-family:'Fraunces',serif;font-weight:900;font-size:18px;margin-top:8px}
+.tcard .pr span{color:var(--teal-600)}
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.grid{grid-template-columns:1fr 1fr}}
+
+.foot{background:linear-gradient(175deg,#0F766E,#0A3B38);color:rgba(255,255,255,.7);padding:26px 0;font-size:13px}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.foot a{color:rgba(255,255,255,.85);text-decoration:none;margin-right:18px;font-weight:600}
+.foot a:hover{color:#fff}
+.demo-reset{border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:8px 13px;color:rgba(255,255,255,.85);font-size:12.5px;font-weight:700}
+.demo-reset:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:12px;border:1.5px solid transparent;font-size:14px;font-weight:800;white-space:nowrap;transition:all .18s}
+.btn i{font-size:13px}
+.b-pri{background:var(--teal-600);color:#fff;box-shadow:0 4px 14px rgba(13,148,136,.28)}
+.b-pri:hover{background:var(--teal-700)}
+.b-sec{background:#fff;border-color:var(--border);color:var(--ink-2)}
+.b-sec:hover{border-color:var(--teal-400);color:var(--teal-600)}
+.b-soft{background:var(--teal-50);border-color:var(--teal-100);color:var(--teal-700)}
+.b-soft:hover{background:var(--teal-100)}
+.b-ghost{background:none;color:var(--teal-700);text-decoration:underline;padding:6px 4px;font-weight:700;border-radius:8px}
+.b-ghost:hover{color:var(--teal-600)}
+.b-block{width:100%}
+
+/* ── OVERLAY ── */
+.ck-ov{position:fixed;inset:0;z-index:90;background:rgba(15,23,42,.55);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .28s}
+.ck-ov.on{opacity:1;pointer-events:auto}
+
+/* ── BANNER (1 вер.) ── */
+.ck-banner{position:fixed;z-index:100;left:24px;right:24px;bottom:24px;max-width:560px;margin:0 auto;background:#fff;border:1.5px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--sh-xl);padding:24px 24px 18px;
+  transform:translateY(140%);opacity:0;transition:transform .34s cubic-bezier(.4,0,.2,1),opacity .3s}
+.ck-banner.on{transform:none;opacity:1}
+.ck-b-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.ck-cookie{width:46px;height:46px;border-radius:14px;background:var(--teal-50);color:var(--teal-600);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ck-b-top h2{font-family:'Fraunces',serif;font-size:20px;font-weight:900;letter-spacing:-.3px;margin-bottom:6px}
+.ck-b-top p{font-size:13.5px;color:var(--muted);line-height:1.6}
+.ck-b-top p a{color:var(--teal-700);font-weight:700;text-decoration:underline}
+.ck-b-actions{display:flex;gap:10px;flex-wrap:wrap}
+.ck-b-actions .btn{flex:1 1 auto;min-width:150px}
+.ck-b-settings{display:flex;justify-content:center;margin-top:12px}
+
+/* ── MODAL (2 вер.) ── */
+.ck-modal{position:fixed;z-index:110;left:50%;top:50%;transform:translate(-50%,-46%) scale(.98);opacity:0;pointer-events:none;
+  width:600px;max-width:calc(100% - 32px);max-height:88vh;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-xl);display:flex;flex-direction:column;overflow:hidden;transition:opacity .25s,transform .25s}
+.ck-modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.ck-m-head{padding:20px 22px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;flex-shrink:0}
+.ck-m-head h2{font-family:'Fraunces',serif;font-size:19px;font-weight:900;letter-spacing:-.3px;margin-bottom:3px}
+.ck-m-head p{font-size:12.5px;color:var(--muted-2)}
+.ck-x{margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--bg);color:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ck-x:hover{background:var(--border)}
+.ck-m-body{padding:16px 22px;overflow:auto;flex:1}
+.ck-intro{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.ck-intro a{color:var(--teal-700);font-weight:700}
+
+/* категорія */
+.ck-cat{border:1.5px solid var(--border);border-radius:var(--r-lg);margin-bottom:12px;overflow:hidden;background:#fff}
+.ck-cat-h{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.ck-cat-exp{display:flex;align-items:center;gap:10px;flex:1;text-align:left;min-width:0}
+.ck-chev{color:var(--muted-2);transition:transform .2s;flex-shrink:0;font-size:12px}
+.ck-cat.open .ck-chev{transform:rotate(90deg)}
+.ck-cat-t{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ck-cat-n{font-size:12px;color:var(--muted-2);font-weight:600;margin-top:2px}
+.ck-badge{font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--teal-50);color:var(--teal-700);border-radius:6px;padding:2px 8px}
+
+/* switch */
+.sw{width:46px;height:26px;border-radius:50px;background:var(--border);position:relative;flex-shrink:0;transition:background .2s}
+.sw::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(15,23,42,.2);transition:transform .2s}
+.sw.on{background:var(--teal-500)}
+.sw.on::after{transform:translateX(20px)}
+.sw.lock{background:var(--teal-500);opacity:.55;cursor:not-allowed}
+.sw.lock::after{transform:translateX(20px)}
+
+.ck-cat-b{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.ck-cat.open .ck-cat-b{max-height:760px}
+.ck-cat-in{padding:0 16px 16px;border-top:1px solid var(--border);margin-top:-1px;padding-top:14px;background:var(--bg)}
+.ck-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.ck-tblw{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+.ck-tbl{width:100%;border-collapse:collapse;font-size:12px}
+.ck-tbl th{text-align:left;font-size:10px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-2);padding:8px 11px;background:var(--bg);border-bottom:1px solid var(--border)}
+.ck-tbl td{padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--muted)}
+.ck-tbl td b{color:var(--ink);font-weight:800}
+.ck-tbl tr:last-child td{border-bottom:0}
+
+.ck-m-foot{padding:14px 22px;border-top:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;background:#fff}
+.ck-m-foot .btn{flex:1 1 auto;min-width:130px}
+
+/* FAB */
+.ck-fab{position:fixed;left:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 18px;background:var(--teal-600);color:#fff;border-radius:50px;font-size:13.5px;font-weight:800;box-shadow:var(--sh-lg);
+  opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .25s,transform .25s}
+.ck-fab.on{opacity:1;transform:none;pointer-events:auto}
+.ck-fab:hover{background:var(--teal-700)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:50px;font-size:13.5px;font-weight:700;z-index:200;box-shadow:var(--sh-xl);opacity:0;pointer-events:none;transition:all .28s;max-width:calc(100vw - 32px);text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%)}
+
+@media(max-width:560px){
+  .ck-banner{left:0;right:0;bottom:0;max-width:none;border-radius:var(--r-xl) var(--r-xl) 0 0;border-left:0;border-right:0;border-bottom:0;padding:22px 18px 16px}
+  .ck-b-actions .btn{min-width:0;flex:1 1 100%}
+  .ck-modal{left:0;right:0;top:auto;bottom:0;transform:translateY(100%);width:100%;max-width:none;max-height:92vh;border-radius:var(--r-xl) var(--r-xl) 0 0}
+  .ck-modal.on{transform:none}
+  .ck-m-foot{flex-direction:column-reverse}
+  .ck-m-foot .btn{width:100%}
+  .ck-fab{left:14px;bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER (контекст) ── -->
+<header class="head">
+  <div class="wrap head-in">
+    <a href="#" class="logo"><div class="logo-ic">L</div><div class="logo-tx">Libitum</div></a>
+    <nav class="nav">
+      <a href="#">Репетитори</a><a href="#">Психологи</a><a href="#">Логопеди</a><a href="#">Як це працює</a>
+    </nav>
+    <div class="head-r">
+      <div class="head-ic"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <a href="#" class="btn b-pri" style="padding:10px 18px">Увійти</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── DEMO ОБСЯГ ── -->
+<main>
+  <section class="wrap hero">
+    <h1>Знайдіть свого спеціаліста</h1>
+    <p>Репетитори, психологи та логопеди з прозорими правилами. Пробне заняття, перевірені відгуки, зручний розклад.</p>
+    <a href="#" class="btn b-pri">Переглянути каталог</a>
+    <div class="grid" id="demoGrid"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a href="#">Політика конфіденційності</a>
+      <a href="#">Політика cookies</a>
+      <a href="#" onclick="openSettings();return false">Налаштування cookies</a>
+    </div>
+    <button class="demo-reset" onclick="resetConsent()"><i class="fa-solid fa-rotate-left" style="margin-right:6px"></i>Скинути згоду (демо)</button>
+  </div>
+</footer>
+
+<!-- ══════════ COOKIE CONSENT ══════════ -->
+<div class="ck-ov" id="ckOv"></div>
+
+<!-- 1. банер -->
+<section class="ck-banner" id="ckBanner" role="dialog" aria-modal="false" aria-labelledby="ckTitle" aria-describedby="ckDesc">
+  <div class="ck-b-top">
+    <div class="ck-cookie" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
+    <div>
+      <h2 id="ckTitle">Ми цінуємо вашу приватність</h2>
+      <p id="ckDesc">Ми використовуємо cookies, щоб платформа працювала, вимірювати відвідуваність і персоналізувати контент та рекомендації. Необхідні cookies увімкнені завжди. Інші — лише з вашої згоди, яку можна будь-коли змінити або відкликати. Докладніше в <a href="#">Політиці використання cookies</a>.</p>
+    </div>
+  </div>
+  <div class="ck-b-actions">
+    <button class="btn b-sec" onclick="rejectAll()">Відхилити все</button>
+    <button class="btn b-pri" onclick="acceptAll()">Прийняти все</button>
+  </div>
+  <div class="ck-b-settings">
+    <button class="btn b-ghost" onclick="openSettings()">Налаштувати</button>
+  </div>
+</section>
+
+<!-- 2. налаштування -->
+<section class="ck-modal" id="ckModal" role="dialog" aria-modal="true" aria-labelledby="ckMTitle">
+  <div class="ck-m-head">
+    <div>
+      <h2 id="ckMTitle">Налаштування cookies</h2>
+      <p>Керуйте згодою для кожної категорії</p>
+    </div>
+    <button class="ck-x" onclick="closeSettings()" aria-label="Закрити"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="ck-m-body">
+    <p class="ck-intro">Cookies — це невеликі файли, які ми зберігаємо на вашому пристрої. Ми розподіляємо їх за призначенням. Необхідні cookies потрібні для базової роботи сайту, тому їх не можна вимкнути. Щодо інших рішення ухвалюєте ви. Деталі про обробку даних — у <a href="#">Політиці конфіденційності</a>.</p>
+    <div id="ckCats"></div>
+  </div>
+  <div class="ck-m-foot">
+    <button class="btn b-sec" onclick="rejectAll()">Відхилити все</button>
+    <button class="btn b-soft" onclick="saveChoice()">Зберегти вибір</button>
+    <button class="btn b-pri" onclick="acceptAll()">Прийняти все</button>
+  </div>
+</section>
+
+<!-- FAB -->
+<button class="ck-fab" id="ckFab" onclick="openSettings()" aria-label="Налаштування cookies">
+  <i class="fa-solid fa-cookie-bite"></i>Cookies
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ═══════════ КОНФІГУРАЦІЯ ═══════════ */
+const CONSENT_VERSION='1.0';
+const STORAGE_KEY='lb_cookie_consent';
+
+const CATEGORIES=[
+  {key:'necessary',required:true,title:'Необхідні',note:'Без них сайт не працює',
+   desc:'Забезпечують базові функції: вхід, вибране, безпеку та збереження ваших налаштувань. Працюють на підставі законного інтересу, не потребують згоди й не вимикаються.',
+   cookies:[
+     ['lb_session','Підтримка сесії, входу та обраного','Libitum','Сесія'],
+     ['lb_cookie_consent','Збереження ваших налаштувань cookies','Libitum','12 місяців'],
+     ['XSRF-TOKEN','Захист від підробки запитів (безпека)','Libitum','Сесія']
+   ]},
+  {key:'analytics',required:false,title:'Аналітичні',note:'Анонімне вимірювання відвідуваності',
+   desc:'Допомагають зрозуміти, як ви користуєтесь платформою — які сторінки переглядаєте та де виникають помилки. Завдяки цьому ми покращуємо сервіс. Дані обробляємо в узагальненому вигляді.',
+   cookies:[
+     ['_ga','Розрізнення унікальних відвідувачів (Google Analytics 4)','Google','24 місяці'],
+     ['_gid','Розрізнення відвідувачів','Google','24 години'],
+     ['_hjSessionUser','Аналіз поведінки, теплові карти','Hotjar','12 місяців']
+   ]},
+  {key:'marketing',required:false,title:'Маркетингові',note:'Релевантна реклама та ремаркетинг',
+   desc:'Використовуються, щоб показувати релевантнішу рекламу на інших сайтах і в соцмережах, вимірювати її ефективність та обмежувати кількість показів.',
+   cookies:[
+     ['_fbp','Ремаркетинг і вимірювання конверсій (Meta Pixel)','Meta Platforms','3 місяці'],
+     ['_gcl_au','Вимірювання конверсій реклами (Google Ads)','Google','90 днів'],
+     ['_ttp','Персоналізація реклами (TikTok Pixel)','TikTok','13 місяців']
+   ]},
+  {key:'preferences',required:false,title:'Функціональні',note:'Запамʼятовування ваших налаштувань',
+   desc:'Дають змогу запамʼятати ваші вибори (мову, регіон, нещодавно переглянутих спеціалістів) і зробити користування зручнішим та персоналізованим.',
+   cookies:[
+     ['lb_locale','Запамʼятовування мови та регіону','Libitum','12 місяців'],
+     ['recently_viewed','Нещодавно переглянуті спеціалісти','Libitum','30 днів'],
+     ['lb_prefs','Збережені фільтри пошуку','Libitum','90 днів']
+   ]}
+];
+
+let state={necessary:true,analytics:false,marketing:false,preferences:false};
+
+/* ═══════════ RENDER ═══════════ */
+function renderCats(){
+  document.getElementById('ckCats').innerHTML=CATEGORIES.map(function(c){
+    const rows=c.cookies.map(function(k){return '<tr><td><b>'+k[0]+'</b></td><td>'+k[1]+'</td><td>'+k[2]+'</td><td>'+k[3]+'</td></tr>';}).join('');
+    const sw=c.required
+      ? '<span class="sw lock" title="Завжди активні" aria-hidden="true"></span>'
+      : '<button class="sw '+(state[c.key]?'on':'')+'" role="switch" aria-checked="'+state[c.key]+'" aria-label="'+c.title+'" onclick="toggleCat(\''+c.key+'\',this)"></button>';
+    const badge=c.required?'<span class="ck-badge">Завжди активні</span>':'';
+    return '<div class="ck-cat" data-k="'+c.key+'">'
+      +'<div class="ck-cat-h">'
+        +'<button class="ck-cat-exp" onclick="toggleExp(this)" aria-expanded="false"><i class="fa-solid fa-chevron-right ck-chev"></i>'
+          +'<span><span class="ck-cat-t">'+c.title+' '+badge+'</span><span class="ck-cat-n">'+c.note+' · '+c.cookies.length+' cookies</span></span>'
+        +'</button>'+sw
+      +'</div>'
+      +'<div class="ck-cat-b"><div class="ck-cat-in"><p class="ck-desc">'+c.desc+'</p>'
+        +'<div class="ck-tblw"><table class="ck-tbl"><thead><tr><th>Назва</th><th>Призначення</th><th>Постачальник</th><th>Термін</th></tr></thead><tbody>'+rows+'</tbody></table></div>'
+      +'</div></div></div>';
+  }).join('');
+}
+function toggleExp(btn){ const cat=btn.closest('.ck-cat'); const open=cat.classList.toggle('open'); btn.setAttribute('aria-expanded',open?'true':'false'); }
+function toggleCat(key,el){ state[key]=!state[key]; el.classList.toggle('on',state[key]); el.setAttribute('aria-checked',state[key]?'true':'false'); }
+function syncSwitches(){ document.querySelectorAll('#ckCats .ck-cat').forEach(function(cat){ const k=cat.dataset.k,sw=cat.querySelector('.sw:not(.lock)'); if(sw){sw.classList.toggle('on',!!state[k]);sw.setAttribute('aria-checked',state[k]?'true':'false');} }); }
+
+/* ═══════════ ДІЇ ЗГОДИ ═══════════ */
+function acceptAll(){ state={necessary:true,analytics:true,marketing:true,preferences:true}; persist(); closeAll(); toast('Згоду збережено — прийнято всі cookies'); }
+function rejectAll(){ state={necessary:true,analytics:false,marketing:false,preferences:false}; persist(); closeAll(); toast('Збережено — дозволено лише необхідні cookies'); }
+function saveChoice(){ persist(); closeAll(); toast('Ваші налаштування cookies збережено'); }
+function persist(){
+  const rec={v:CONSENT_VERSION,date:new Date().toISOString(),consent:Object.assign({},state)};
+  try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(rec)); }catch(e){}
+  applyConsent(rec.consent); showFab();
+}
+/* у реальному впровадженні тут запускаються/блокуються скрипти за категоріями */
+function applyConsent(c){ /* if(c.analytics) loadAnalytics(); if(c.marketing) loadPixels(); */ }
+
+/* ═══════════ ВІДКРИТТЯ / ЗАКРИТТЯ ═══════════ */
+function showBanner(){ document.getElementById('ckOv').classList.add('on'); document.getElementById('ckBanner').classList.add('on'); document.getElementById('ckFab').classList.remove('on'); }
+function hideBanner(){ document.getElementById('ckBanner').classList.remove('on'); }
+function openSettings(){ renderCats(); syncSwitches(); hideBanner(); document.getElementById('ckOv').classList.add('on'); document.getElementById('ckModal').classList.add('on'); document.getElementById('ckFab').classList.remove('on'); }
+function closeSettings(){ document.getElementById('ckModal').classList.remove('on'); if(!hasConsent()){ showBanner(); } else { document.getElementById('ckOv').classList.remove('on'); showFab(); } }
+function closeAll(){ document.getElementById('ckOv').classList.remove('on'); document.getElementById('ckModal').classList.remove('on'); hideBanner(); }
+function showFab(){ document.getElementById('ckFab').classList.add('on'); }
+
+/* ═══════════ СТАН / ДЕМО ═══════════ */
+function hasConsent(){ try{ return !!localStorage.getItem(STORAGE_KEY); }catch(e){ return false; } }
+function loadConsent(){ try{ const raw=localStorage.getItem(STORAGE_KEY); if(!raw) return null; const rec=JSON.parse(raw); if(rec.v!==CONSENT_VERSION) return null; return rec; }catch(e){ return null; } }
+function resetConsent(){ try{ localStorage.removeItem(STORAGE_KEY); }catch(e){} state={necessary:true,analytics:false,marketing:false,preferences:false}; document.getElementById('ckModal').classList.remove('on'); showBanner(); toast('Згоду видалено — банер зʼявиться знову'); }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(window._tt); window._tt=setTimeout(function(){t.classList.remove('on');},3000); }
+
+/* демо-картки */
+function renderDemo(){
+  const items=[['Олена І.','Англійська · IELTS','від ','₴400'],['Марія К.','Психолог · КПТ','','₴800'],['Наталія Л.','Логопед · діти','','₴500'],['Анна С.','Математика · НМТ','','₴350']];
+  document.getElementById('demoGrid').innerHTML=items.map(function(p){return '<div class="tcard"><div class="av"><i class="fa-solid fa-user"></i></div><h3>'+p[0]+'</h3><div class="m">'+p[1]+'</div><div class="pr">'+p[2]+'<span>'+p[3]+'</span></div></div>';}).join('');
+}
+
+/* ═══════════ INIT ═══════════ */
+document.addEventListener('DOMContentLoaded',function(){
+  renderDemo(); renderCats();
+  const rec=loadConsent();
+  if(rec){ state=Object.assign({necessary:true,analytics:false,marketing:false,preferences:false},rec.consent,{necessary:true}); applyConsent(state); showFab(); }
+  else { setTimeout(showBanner,450); }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && document.getElementById('ckModal').classList.contains('on')) closeSettings(); });
+  document.getElementById('ckOv').addEventListener('click',function(){ if(document.getElementById('ckModal').classList.contains('on')) closeSettings(); });
+});
+</script>
+</body>
+</html>
